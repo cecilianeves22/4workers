@@ -8,15 +8,25 @@
 }
 
 .button {
+  background: 0;
+  border: 0;
+  padding: 0;
+}
+
+.button a {
   cursor: pointer;
 
+  display: block;
   font-size: 14px;
   font-weight: 700;
   color: var(--white);
   background: var(--main);
-  padding: 8px 25px;
+  padding: 12px 40px;
   border: 0;
-  border-radius: 2px;
+  border-radius: 5px;
+
+  letter-spacing: 0.5px;
+  text-decoration: none;
 
   transition: .2s ease-in-out;
 }
@@ -25,7 +35,8 @@
   filter: brightness(1.2);
 }
 
-body {
+body,
+html {
   height: 100%;
 }
 
@@ -160,4 +171,13 @@ table {
 
 * {
   font-family: 'Fira Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+footer {
+  color: var(--white);
+  background: var(--main);
+  padding: 1rem;
+  text-align: center;
+  margin-top: 80px;
 }

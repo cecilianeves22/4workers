@@ -13,6 +13,7 @@
   <body>
     <section class="container">
       <div class="left-side">
+        <a href="/" class="logo">4WORKERS</a>
         <h1>Seja bem-vindo de volta!</h1>
         <p>Entre para ter acesso ao seu perfil</p>
       </div>
@@ -20,12 +21,12 @@
       <div class="right-side">
         <h2>Faça seu login</h2>
 
-        <form class="login-form">
+        <form class="login-form" id="login-form">
           <div class="input-container">
             <label for="username">
               <svg
-                width="12"
-                height="12"
+                width="20"
+                height="20"
                 viewBox="0 0 12 12"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -40,14 +41,18 @@
               </svg>
             </label>
 
-            <input type="text" placeholder="Digite seu nome de usuário" />
+            <input
+              type="text"
+              placeholder="Digite seu nome de usuário"
+              id="username"
+            />
           </div>
 
           <div class="input-container">
             <label for="password">
               <svg
-                width="12"
-                height="12"
+                width="20"
+                height="20"
                 viewBox="0 0 12 12"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -67,12 +72,36 @@
               </svg>
             </label>
 
-            <input type="text" placeholder="Digite sua senha" />
+            <input
+              type="password"
+              placeholder="Digite sua senha"
+              id="password"
+            />
+          </div>
+          <div class="forgot-password">
+            <a href="/views/forgot-password.html">Esqueceu sua senha?</a>
           </div>
 
-          <button class="button">Fazer login</button>
+          <button class="button" id="login-button"><a>Fazer login</a></button>
         </form>
       </div>
     </section>
+
+    <script>
+      function handleUserLogin() {
+        const form = document.querySelector('#login-form');
+
+        form.addEventListener('submit', function (ev) {
+          ev.preventDefault();
+
+          const sendButton = document.querySelector('#login-button a');
+          sendButton.innerHTML = 'Carregando...';
+
+          setTimeout(() => (window.location.href = '/views/user.html'), 1000);
+        });
+      }
+
+      handleUserLogin();
+    </script>
   </body>
 </html>

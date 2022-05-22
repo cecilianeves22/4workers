@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/css/_reset.css" />
+    <link rel="stylesheet" href="/css/register.css" />
+
+    <title>4WORKERS - Registro</title>
+  </head>
+  <body>
+    <section class="container">
+      <div class="left-side">
+        <a href="/" class="logo">4WORKERS</a>
+        <h1>Bem vindo!</h1>
+        <p>Cadastre-se para acessar na nossa plataforma</p>
+      </div>
+
+      <div class="right-side">
+        <h2>Faça seu cadastro</h2>
+
+        <form class="register-form" id="register-form">
+          <div class="input-container">
+            <input
+              type="text"
+              placeholder="Digite seu nome completo"
+              id="username"
+            />
+          </div>
+
+          <div class="input-container">
+            <input type="email" placeholder="Digite seu email" id="email" />
+          </div>
+
+          <div class="input-container">
+            <input
+              type="password"
+              placeholder="Digite sua senha"
+              id="password"
+            />
+          </div>
+
+          <div class="input-container">
+            <select id="isEnterprise">
+              <option value="enterprise">Sou empresa</option>
+              <option value="employee">Sou funcionário</option>
+            </select>
+          </div>
+
+          <a class="has-account" href="/views/login.html"
+            >Já possui uma conta?</a
+          >
+
+          <button class="button" id="register-button">
+            <a>Cadastre-se</a>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      function handleUserRegister() {
+        const form = document.querySelector('#register-form');
+
+        form.addEventListener('submit', function (ev) {
+          ev.preventDefault();
+
+          const sendButton = document.querySelector('#register-button a');
+          sendButton.innerHTML = 'Carregando...';
+
+          setTimeout(() => {
+            let href = '/views/user';
+
+            const select = document.querySelector('#isEnterprise');
+            const isEnterprise =
+              select.options[select.selectedIndex].value == 'enterprise';
+
+            if (isEnterprise) href = '/views/enterprise';
+
+            window.location.href = href + '.html';
+          }, 1000);
+        });
+      }
+
+      handleUserRegister();
+    </script>
+  </body>
+</html>

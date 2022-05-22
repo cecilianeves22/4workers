@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/css/_reset.css" />
+    <link rel="stylesheet" href="/css/view-job.css" />
+
+    <title>4WORKERS - Visualizar vaga</title>
+  </head>
+
+  <body>
+    <header>
+      <a href="/" class="logo">4WORKERS</a>
+    </header>
+
+    <main>
+      <a id="back" tabindex="0"
+        ><svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M14.53 18.53a.75.75 0 0 1-1.06 0l-6-6a.75.75 0 0 1 0-1.06l6-6a.75.75 0 1 1 1.06 1.06L9.06 12l5.47 5.47a.75.75 0 0 1 0 1.06Z"
+            fill="#030D45"
+          />
+        </svg>
+        Voltar</a
+      >
+
+      <div class="enterprise-info">
+        <img src="/assets/images/yamaha-logo.png" alt="Logo yamaha" />
+        <h2>Yamaha</h2>
+      </div>
+
+      <div class="job-about">
+        <h2>Musicista especialista em pianos digitais</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget
+          augue sem. Aenean id pellentesque dui. Sed porttitor eros et lacus
+          laoreet, id interdum mauris luctus. Duis iaculis mi non neque interdum
+          pharetra.
+        </p>
+        <p>
+          Aenean id pellentesque dui. Sed porttitor eros et lacus laoreet, id
+          interdum mauris luctus. Duis iaculis mi non neque interdum pharetra.
+        </p>
+      </div>
+    </main>
+
+    <footer>© 2022 4WORKERS. Todos os direitos reservados.</footer>
+
+    <script>
+      const back = document.querySelector('#back');
+
+      back.addEventListener('click', () => window.history.back());
+    </script>
+  </body>
+</html>
